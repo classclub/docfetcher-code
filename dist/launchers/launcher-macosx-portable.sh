@@ -4,10 +4,10 @@ scriptdir=$(cd "$(dirname "$0")"; pwd)
 cd "$scriptdir"
 cd ../../..
 
-CLASSPATH=
-for FILE in `ls ./lib/*.jar`
+classpath=
+for f in `ls ./lib/*.jar`
 do
-   CLASSPATH=${CLASSPATH}:${FILE}
+	classpath=${classpath}:${f}
 done
 
 # Prefer legacy Java 6 runtime from Apple if present
@@ -18,4 +18,12 @@ fi
 
 # Note: The java call must not end with '&', otherwise the -Xdock:name property will have no effect.
 
-"$java_exec" -XstartOnFirstThread -Xdock:name="${app_name}" -enableassertions -Xmx1g -Xss2m -cp ".:${CLASSPATH}" -Djava.library.path="lib" ${main_class} "$@"
+"$java_exec" \
+	-XstartOnFirstThread \
+	-Xdock:name="${app_name}" \
+	-enableassertions \
+	-Xmx1g \
+	-Xss2m \
+	-cp ".:${classpath}" \
+	-Djava.library.path="lib" \
+	${main_class} "$@"
