@@ -1,4 +1,4 @@
-DocFetcher с включенными панелью фильтров и панелью предпросмотра:
+DocFetcher с включёнными панелью фильтров и панелью предпросмотра:
 
 <div style="text-align: center;">
 	<img style="width: 500px; height: 375px;" alt="" src="../all/xp_all.png">
