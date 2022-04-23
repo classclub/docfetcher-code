@@ -131,8 +131,10 @@ IndexExcelFormulas = true
 # correct result; if that happens, you can use this setting to disable the
 # heuristics and specify the text encoding manually. For example, set this
 # setting's value to "GBK" for Simplified Chinese GBK encoding. For a list of
-# available encodings, see:
+# available encodings, see the two tables on the following page:
 # http://docs.oracle.com/javase/7/docs/technotes/guides/intl/encoding.doc.html
+# In each table row, the encoding names in the first and second table column are
+# interchangeable.
 # If the above link doesn't work, google for "java supported encodings".
 TextEncodingOverride =
 
