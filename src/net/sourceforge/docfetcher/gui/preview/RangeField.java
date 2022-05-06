@@ -119,6 +119,10 @@ final class RangeField {
 		}
 	}
 	
+	public void setToolTipText(@NotNull String toolTip) {
+		st.setToolTipText(toolTip);
+	}
+	
 	public void clear() {
 		verifyInput = false;
 		st.setText("");

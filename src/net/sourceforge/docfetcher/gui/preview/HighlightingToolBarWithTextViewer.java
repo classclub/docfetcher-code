@@ -81,7 +81,7 @@ class HighlightingToolBarWithTextViewer {
 		GridData pageNumGridData = new GridData(SWT.FILL, SWT.FILL, true, true);
 		pageNumGridData.minimumWidth = UtilGui.BTW;
 		pageNumField.getControl().setLayoutData(pageNumGridData);
-		pageNumField.getControl().setToolTipText(Msg.page_num.get());
+		pageNumField.setToolTipText(Msg.page_num.get());
 		
 		pageToolbar = new ToolBar(toolBarComp, SWT.FLAT);
 		pageToolbar.setLayoutData(new GridData(SWT.FILL, SWT.FILL, false, true));
@@ -113,7 +113,7 @@ class HighlightingToolBarWithTextViewer {
 		GridData occGridData = new GridData(SWT.FILL, SWT.FILL, true, true);
 		occGridData.minimumWidth = UtilGui.BTW;
 		occField.getControl().setLayoutData(occGridData);
-		occField.getControl().setToolTipText(Msg.occurrence_count.get());
+		occField.setToolTipText(Msg.occurrence_count.get());
 		
 		ToolBar toolBar2 = new ToolBar(toolBarComp, SWT.FLAT);
 		toolBar2.setLayoutData(new GridData(SWT.FILL, SWT.FILL, false, true));
