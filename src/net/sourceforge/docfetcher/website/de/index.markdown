@@ -1,4 +1,4 @@
-**Hinweis**: Sie könnten Interesse haben an [DocFetcher Pro](https://docfetcherpro.com/), dem kommerziellen großen Bruder von DocFetcher mit mehr Features und weniger Bugs.
+**Hinweis**: Sie könnten Interesse haben an DocFetcher Pro, dem kommerziellen großen Bruder von DocFetcher mit mehr Features und weniger Bugs, oder DocFetcher Server, dem kommerziellen Cousin von DocFetcher für multiple Benutzer und mit einer web-basierten Benutzer-Oberfläche. [Mehr dazu](https://docfetcherpro.com/).
 
 Beschreibung
 ============
