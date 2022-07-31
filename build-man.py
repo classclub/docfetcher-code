@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 import os, shutil, platform, sys
 from os.path import exists, join, isfile, isdir
