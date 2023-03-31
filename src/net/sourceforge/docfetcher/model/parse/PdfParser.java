@@ -26,7 +26,6 @@ import org.apache.pdfbox.pdmodel.common.PDMetadata;
 import org.apache.pdfbox.pdmodel.encryption.InvalidPasswordException;
 import org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotation;
 import org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotationMarkup;
-import org.apache.pdfbox.text.PDFTextStripper;
 import org.apache.xmpbox.XMPMetadata;
 import org.apache.xmpbox.schema.AdobePDFSchema;
 import org.apache.xmpbox.schema.DublinCoreSchema;
@@ -88,11 +87,17 @@ public final class PdfParser extends StreamParser {
 			 * If the PDF file is encrypted, the PDF stripper will automatically
 			 * try an empty password.
 			 */
-			PDFTextStripper stripper = new PDFTextStripper() {
+			PDFTextAndAnnotationStripper stripper = new PDFTextAndAnnotationStripper() {
+				@Override
 				protected void startPage(PDPage page) throws IOException {
 					context.getReporter().subInfo(getCurrentPageNo(), pageCount);
 				}
-				protected void endPage(PDPage page) throws IOException {
+				@Override
+				protected boolean isCanceled() {
+					return context.getCancelable().isCanceled();
+				}
+				@Override
+				protected void writeAnnotations(PDPage page) {
 					try {
 						for (PDAnnotation a : page.getAnnotations()) {
 							if (a instanceof PDAnnotationMarkup) {
@@ -113,9 +118,6 @@ public final class PdfParser extends StreamParser {
 						}
 					} catch (IOException e) {
 						System.err.println(e.getMessage());
-					}
-					if (context.getCancelable().isCanceled()) {
-						setEndPage(0);
 					}
 				}
 			};
