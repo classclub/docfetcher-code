@@ -96,6 +96,58 @@ public final class BuildMain {
 		javac.setFork(true); // Won't find javac executable without this
 		javac.setEncoding("utf8"); // Needed for some Tika source files
 		javac.execute();
+		
+		/*
+		 * The following is an alternative way to compile the Java sources: It
+		 * uses the javac command found on the PATH instead of Ant's Javac
+		 * class. The code below might be helpful if there's an issue with
+		 * Ant's Javac.
+		 */
+//		final List<String> javaFiles = new ArrayList<String>();
+//		final FileWalker javaCollector = new FileWalker() {
+//			@Override
+//			protected void handleFile(@NotNull File file) {
+//				if (!file.getName().toLowerCase().endsWith(".java")) {
+//					return;
+//				}
+//				javaFiles.add(file.getPath());
+//			}
+//		};
+//		javaCollector.run(new File("src"));
+//		final String classPathSep = System.getProperty("path.separator");
+//		final StringBuilder classPathStr = new StringBuilder();
+//		final FileWalker jarCollector = new FileWalker() {
+//			@Override
+//			protected void handleFile(@NotNull File file) {
+//				if (!file.getName().toLowerCase().endsWith(".jar")) {
+//					return;
+//				}
+//				if (classPathStr.length() != 0) {
+//					classPathStr.append(classPathSep);
+//				}
+//				classPathStr.append(file.getPath());
+//			}
+//		};
+//		jarCollector.run(new File("lib"));
+//		final String[] javaCmdArr = new String[] {
+//			"javac",
+//			"-sourcepath", "build/tmp/src",
+//			"-classpath", classPathStr.toString(),
+//			"-g:lines",
+//			"-encoding", "UTF8",
+//			"-source", "1.7",
+//			"-target", "1.7"
+//		};
+//		final List<String> javaCmdList = new ArrayList<String>();
+//		for (String s : javaCmdArr) {
+//			javaCmdList.add(s);
+//		}
+//		for (String s : javaFiles) {
+//			javaCmdList.add(s);
+//		}
+//		ProcessBuilder pb = new ProcessBuilder().inheritIO();
+//		pb.redirectErrorStream(true);
+//		pb.command(javaCmdList).start().waitFor();
 
 		recreateJarFile("", false, LineSep.WINDOWS); // Needed for NSIS script
 		File portableJar = recreateJarFile("portable_", true, LineSep.WINDOWS);
