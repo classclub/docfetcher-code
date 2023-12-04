@@ -9,8 +9,7 @@ the following places:
 
 * Windows: <https://java.com>
 * Linux: In the official software repository of your distribution.
-* OS&nbsp;X: <https://java.com>
-
+* OS&nbsp;X: <https://java.com>. Important: Even if you have an Apple M1 chip, you still need to install the Java runtime for the x64 architecture, not the one for ARM64.
 
 Step 2: Install DocFetcher ${version}
 =====================================

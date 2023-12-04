@@ -9,7 +9,7 @@
 
 * Windows：<http://java.com>
 * Linux：在您的发行版的官方软件存储库中。
-* Mac OS&nbsp;X: <http://www.apple.com/support/>
+* Mac OS&nbsp;X: <http://www.apple.com/support/>. Important: Even if you have an Apple M1 chip, you still need to install the Java runtime for the x64 architecture, not the one for ARM64.
 
 最新正式版本：DocFetcher ${version}
 =====================================

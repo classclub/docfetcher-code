@@ -6,7 +6,7 @@ Falls Java 1.7 oder neuer nicht auf Ihrem System verfügbar ist, können Sie es 
 
 * Windows: <https://java.com>
 * Linux: Im offiziellen Software-Repository Ihrer Distribution.
-* OS&nbsp;X: <https://java.com>
+* OS&nbsp;X: <https://java.com>. Wichtig: Selbst mit Apple-M1-Chip muss die Java-Laufzeit-Umgebung für die x64-Architektur installiert werden, nicht die für die ARM64-Architektur.
 
 Schritt 2: DocFetcher ${version} installieren
 ======================================

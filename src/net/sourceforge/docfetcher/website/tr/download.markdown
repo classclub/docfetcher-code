@@ -9,7 +9,7 @@ yerlerden edinebilirsiniz:
 
 * Windows: <http://java.com>
 * Linux: Dağıtımınızın resmi yazılım havuzunda.
-* Mac OS&nbsp;X: <http://www.apple.com/support/>
+* Mac OS&nbsp;X: <http://www.apple.com/support/>. Important: Even if you have an Apple M1 chip, you still need to install the Java runtime for the x64 architecture, not the one for ARM64.
 
 Son Sürüm: DocFetcher ${version}
 =====================================
