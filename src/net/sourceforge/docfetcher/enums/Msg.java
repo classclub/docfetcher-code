@@ -317,11 +317,11 @@ public enum Msg {
 		"Label for a button on a configuration window. Clicking the button opens a " +
 		"manual page where the various configuration options are described."),
 	restore_default (
-		"&Restore Default",
+		"Restore &Default",
 		"Label for a button on a configuration window. Clicking the button " +
 		"restores the default configuration (one setting)."),
 	restore_defaults (
-		"&Restore Defaults",
+		"Restore &Defaults",
 		"Label for a button on a configuration window. Clicking the button " +
 		"restores the default configuration (multiple settings)."),
 	run ("&Run",
